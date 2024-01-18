@@ -6,18 +6,27 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
+    @Query var branches: [Branch]
+    @Environment(\.modelContext) var modelContext
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack{
+            List(branches) { branch in
+                Text(branch.name)
+            }
+            .navigationTitle("Branches")
+            .toolbar{
+                Button("Add"){
+                    let branch = Branch(name: "anna", type: "admin")
+                    modelContext.insert(branch)
+                }
+            }
+            }
         }
-        .padding()
     }
-}
 
 #Preview {
     ContentView()

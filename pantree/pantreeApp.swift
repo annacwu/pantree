@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct pantreeApp: App {
@@ -13,5 +14,7 @@ struct pantreeApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: Branch.self)
+        .modelContainer(for: Leaf.self)
     }
 }

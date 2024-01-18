@@ -1,0 +1,30 @@
+//
+//  AddLeafView.swift
+//  pantree
+//
+//  Created by Anna Wu on 1/21/24.
+//
+
+import SwiftUI
+
+struct AddLeafView: View {
+    @Environment(\.modelContext) var modelContext
+    
+    @State private var name = ""
+    @State private var date = ""
+    @State private var low = false
+    var body: some View {
+        NavigationStack {
+            Form {
+                Section {
+                    TextField("name of item", text: $name)
+                    TextField("date of purchase", text: $date)
+                }
+            }
+        }
+    }
+}
+
+#Preview {
+    AddLeafView()
+}
