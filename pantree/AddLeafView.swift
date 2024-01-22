@@ -19,8 +19,20 @@ struct AddLeafView: View {
                 Section {
                     TextField("name of item", text: $name)
                     TextField("date of purchase", text: $date)
+                    Picker("running low?", selection: $low){
+                        Text("yes")
+                        Text("no")
+                    }
+                }
+                
+                Section {
+                    Button("Save") {
+                        let newLeaf = Leaf(name: name, date: date, low: low)
+                        modelContext.insert(newLeaf)
+                    }
                 }
             }
+            .navigationTitle("add leaf")
         }
     }
 }
