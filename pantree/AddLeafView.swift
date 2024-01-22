@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AddLeafView: View {
     @Environment(\.modelContext) var modelContext
+    @Environment(\.dismiss) var dismiss
     
     @State private var name = ""
     @State private var date = ""
@@ -29,6 +30,7 @@ struct AddLeafView: View {
                     Button("Save") {
                         let newLeaf = Leaf(name: name, date: date, low: low)
                         modelContext.insert(newLeaf)
+                        dismiss()
                     }
                 }
             }
