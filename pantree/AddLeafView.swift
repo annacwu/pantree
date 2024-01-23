@@ -14,6 +14,10 @@ struct AddLeafView: View {
     @State private var name = ""
     @State private var date = ""
     @State private var low = false
+    @State private var user = ""
+    let users = ["anna", "gabby", "jmo", "lyell"]
+    
+    
     var body: some View {
         NavigationStack {
             Form {
@@ -24,11 +28,16 @@ struct AddLeafView: View {
                         Text("yes")
                         Text("no")
                     }
+                    Picker("owner?", selection: $user){
+                        ForEach(users.indices) { index in
+                            Text(users[index])
+                        }
+                    }
                 }
                 
                 Section {
                     Button("Save") {
-                        let newLeaf = Leaf(name: name, date: date, low: low)
+                        let newLeaf = Leaf(name: name, date: date, low: low, user: user)
                         modelContext.insert(newLeaf)
                         dismiss()
                     }
