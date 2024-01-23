@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-//    @Query var branches: [Branch]
+    @Query var branches: [Branch]
     @Query var leaves: [Leaf]
     @Environment(\.modelContext) var modelContext
     
@@ -17,18 +17,29 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
-            Text("Count: \(leaves.count)")
-                .navigationTitle("pantree")
-                .toolbar {
-                    ToolbarItem(placement: .topBarTrailing) {
-                        Button("Add leaf", systemImage: "plus"){
-                            showingAddScreen.toggle()
+            List {
+                ForEach(branches) { branch in
+                    NavigationLink(value: branch){
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text(branch.name)
+                                    .font(.headline)
+                            }
                         }
                     }
                 }
-                .sheet(isPresented: $showingAddScreen) {
-                    AddLeafView()
+            }
+            .navigationTitle("pantree")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Add leaf", systemImage: "plus"){
+                        showingAddScreen.toggle()
+                    }
                 }
+            }
+            .sheet(isPresented: $showingAddScreen) {
+                AddLeafView()
+            }
         }
         
 //        NavigationStack{
