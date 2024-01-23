@@ -14,7 +14,6 @@ struct pantreeApp: App {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: Branch.self)
-        .modelContainer(for: Leaf.self)
+        .modelContainer(for: [Branch.self, Leaf.self])
     }
 }
