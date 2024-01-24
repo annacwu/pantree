@@ -11,11 +11,12 @@ struct AddLeafView: View {
     @Environment(\.modelContext) var modelContext
     @Environment(\.dismiss) var dismiss
     
+    let users = ["anna", "gabby", "jmo", "lyell"]
     @State private var name = ""
     @State private var date = ""
-    @State private var low = false
-    @State private var user = ""
-    let users = ["anna", "gabby", "jmo", "lyell"]
+    @State private var low = "yes"
+    // fix this later
+    @State private var user = "anna"
     
     
     var body: some View {
