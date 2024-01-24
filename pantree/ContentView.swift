@@ -16,16 +16,16 @@ struct ContentView: View {
     @State private var showingAddScreen = false
     
     var body: some View {
-        NavigationStack {
+        NavigationStack{
             List {
                 ForEach(branches) { branch in
-                    NavigationLink(value: branch){
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text(branch.name)
-                                    .font(.headline)
-                            }
+                    DisclosureGroup {
+                        ForEach(leaves) { leaf in
+                            Text(leaf.name)
                         }
+                    } label: {
+                        Text(branch.name)
+                            .font(.headline)
                     }
                 }
             }
@@ -40,20 +40,34 @@ struct ContentView: View {
             .sheet(isPresented: $showingAddScreen) {
                 AddLeafView()
             }
-        }
         
-//        NavigationStack{
-//            List(branches) { branch in
-//                Text(branch.name)
-//            }
-//            .navigationTitle("Branches")
-//            .toolbar{
-//                Button("Add"){
-//                    let branch = Branch(name: "anna", type: "admin")
-//                    modelContext.insert(branch)
+        NavigationStack{
+            List(branches) { branch in
+                Text(branch.name)
+            }
+            .navigationTitle("Branches")
+            .toolbar{
+                Button("Add"){
+                    let branch = Branch(name: "anna", type: "admin")
+                    modelContext.insert(branch)
+                    }
+                }
+            }
+        }
+//        NavigationStack {
+//            List {
+//                ForEach(branches) { branch in
+//                    NavigationLink(value: branch){
+//                        HStack {
+//                            VStack(alignment: .leading) {
+//                                Text(branch.name)
+//                                    .font(.headline)
+//                            }
+//                        }
+//                    }
 //                }
 //            }
-//            }
+            
         }
     }
 
