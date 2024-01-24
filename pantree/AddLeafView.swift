@@ -45,6 +45,11 @@ struct AddLeafView: View {
                 }
             }
             .navigationTitle("add leaf")
+            .toolbar{
+                Button("Close"){
+                    dismiss()
+                }
+            }
         }
     }
 }
