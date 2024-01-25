@@ -43,7 +43,6 @@
 		9233C3E92B58FA2D003C1865 = {
 			isa = PBXGroup;
 			children = (
-				926665632B61A32000DE4935 /* AddBranchView.swift */,
 				9233C3F42B58FA2E003C1865 /* pantree */,
 				9233C3F32B58FA2E003C1865 /* Products */,
 			);
@@ -65,6 +64,7 @@
 				92CBD9292B5E26F800EB1D9D /* Branch.swift */,
 				92CBD92B2B5E2C0900EB1D9D /* Leaf.swift */,
 				9233C3F72B58FA2E003C1865 /* ContentView.swift */,
+				926665632B61A32000DE4935 /* AddBranchView.swift */,
 				9233C3F92B58FA2F003C1865 /* Assets.xcassets */,
 				9233C3FB2B58FA2F003C1865 /* Preview Content */,
 			);

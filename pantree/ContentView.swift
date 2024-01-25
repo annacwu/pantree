@@ -9,9 +9,10 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
+    @Environment(\.modelContext) var modelContext
+    
     @Query var branches: [Branch]
     @Query var leaves: [Leaf]
-    @Environment(\.modelContext) var modelContext
     
     @State private var showingAddScreen = false
     
@@ -41,6 +42,7 @@ struct ContentView: View {
                 AddLeafView()
             }
         
+        //DEAL WITH THIS NEXT
         NavigationStack{
             List(branches) { branch in
                 Text(branch.name)
