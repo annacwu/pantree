@@ -12,9 +12,11 @@ import SwiftData
 class Branch{
     var name: String
     var type: String
+    var food: [String]
     
-    init(name: String, type: String){
+    init(name: String, type: String, food: [String]){
         self.name = name
         self.type = type
+        self.food = food
     }
 }

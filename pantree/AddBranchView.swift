@@ -13,6 +13,7 @@ struct AddBranchView: View {
     
     @State private var name = ""
     @State private var type = "member"
+    @State private var food = ["none"]
     
     
     var body: some View {
@@ -28,7 +29,7 @@ struct AddBranchView: View {
                 
                 Section {
                     Button("Save") {
-                        let newBranch = Branch(name: name, type: type)
+                        let newBranch = Branch(name: name, type: type, food: food)
                         modelContext.insert(newBranch)
                         dismiss()
                         }

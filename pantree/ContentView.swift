@@ -43,18 +43,18 @@ struct ContentView: View {
             }
         
         //DEAL WITH THIS NEXT
-        NavigationStack{
-            List(branches) { branch in
-                Text(branch.name)
-            }
-            .navigationTitle("Branches")
-            .toolbar{
-                Button("Add"){
-                    let branch = Branch(name: "anna", type: "admin")
-                    modelContext.insert(branch)
-                    }
-                }
-            }
+//        NavigationStack{
+//            List(branches) { branch in
+//                Text(branch.name)
+//            }
+//            .navigationTitle("Branches")
+//            .toolbar{
+//                Button("Add"){
+//                    let branch = Branch(name: "anna", type: "admin")
+//                    modelContext.insert(branch)
+//                    }
+//                }
+//            }
         }
 //        NavigationStack {
 //            List {
