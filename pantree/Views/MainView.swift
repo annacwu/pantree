@@ -17,30 +17,34 @@ struct MainView: View {
     @State private var showingAddScreen = false
     
     var body: some View {
-        NavigationStack{
-            List {
-                ForEach(branches) { branch in
-                    DisclosureGroup {
-                        ForEach(leaves) { leaf in
-                            Text(leaf.name)
-                        }
-                    } label: {
-                        Text(branch.name)
-                            .font(.headline)
-                    }
-                }
-            }
-            .navigationTitle("pantree")
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button("Add leaf", systemImage: "plus"){
-                        showingAddScreen.toggle()
-                    }
-                }
-            }
-            .sheet(isPresented: $showingAddScreen) {
-                AddLeafView()
-            }
+        NavigationView {
+            LoginView()
+        }
+        
+//        NavigationStack{
+//            List {
+//                ForEach(branches) { branch in
+//                    DisclosureGroup {
+//                        ForEach(leaves) { leaf in
+//                            Text(leaf.name)
+//                        }
+//                    } label: {
+//                        Text(branch.name)
+//                            .font(.headline)
+//                    }
+//                }
+//            }
+//            .navigationTitle("pantree")
+//            .toolbar {
+//                ToolbarItem(placement: .topBarTrailing) {
+//                    Button("Add leaf", systemImage: "plus"){
+//                        showingAddScreen.toggle()
+//                    }
+//                }
+//            }
+//            .sheet(isPresented: $showingAddScreen) {
+//                AddLeafView()
+//            }
         
         //DEAL WITH THIS NEXT
 //        NavigationStack{
@@ -69,8 +73,8 @@ struct MainView: View {
 //                    }
 //                }
 //            }
-            
-        }
+//            
+//        } belongs to first nav stack
     }
 
 #Preview {
