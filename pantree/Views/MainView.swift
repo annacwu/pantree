@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct ContentView: View {
+struct MainView: View {
     @Environment(\.modelContext) var modelContext
     
     @Query var branches: [Branch]
@@ -74,5 +74,5 @@ struct ContentView: View {
     }
 
 #Preview {
-    ContentView()
+    MainView()
 }
