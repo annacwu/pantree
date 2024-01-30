@@ -33,11 +33,13 @@ struct LoginView: View {
                 //.padding(.bottom, 500)
             }
             // Login Form
-            Form {
+            VStack {
                 TextField("Email Address", text: $email)
                     .textFieldStyle(DefaultTextFieldStyle())
+                    .padding()
                 SecureField("Password", text: $password)
                     .textFieldStyle(DefaultTextFieldStyle())
+                    .padding()
                 
                 Button {
                     //login
@@ -50,8 +52,10 @@ struct LoginView: View {
                             .foregroundStyle(Color.white)
                             .bold()
                     }
+                    .padding(.bottom, 50)
                 }
             }
+            .padding()
             // Create Account
             ZStack {
                 RoundedRectangle(cornerRadius: 0)
