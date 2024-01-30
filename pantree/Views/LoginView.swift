@@ -21,6 +21,10 @@ struct LoginView: View {
                     .ignoresSafeArea()
                 
                 VStack {
+                    Image(decorative: "tree")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                    
                     Text("pantree")
                         .font(.system(size: 50))
                         .foregroundStyle(Color.white)
@@ -29,9 +33,11 @@ struct LoginView: View {
                     Text("grow your pantry")
                         .font(.system(size: 30))
                         .foregroundStyle(Color.white)
+                        .padding(.bottom, 25)
                 }
                 //.padding(.bottom, 500)
             }
+            .padding(.bottom, 30)
             // Login Form
             VStack {
                 TextField("Email Address", text: $email)
