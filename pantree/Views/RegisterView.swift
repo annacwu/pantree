@@ -41,22 +41,25 @@ struct RegisterView: View {
             VStack {
                 TextField("Full Name", text: $name)
                     .textFieldStyle(DefaultTextFieldStyle())
+                    .autocorrectionDisabled()
                     .padding()
                 TextField("Email Address", text: $email)
                     .textFieldStyle(DefaultTextFieldStyle())
+                    .textInputAutocapitalization(.none)
+                    .autocorrectionDisabled()
                     .padding()
                 SecureField("Password", text: $password)
                     .textFieldStyle(DefaultTextFieldStyle())
                     .padding()
                 
                 Button {
-                    //login
+                    // register
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
                             .foregroundStyle(Color.green)
                         
-                        Text("Sign Up")
+                        Text("Create Account")
                             .foregroundStyle(Color.white)
                             .bold()
                     }
