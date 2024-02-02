@@ -38,8 +38,8 @@ struct AddLeafView: View {
                 
                 Section {
                     Button("Save") {
-                        let newLeaf = Leaf(name: name, date: date, low: low, user: user)
-                        modelContext.insert(newLeaf)
+//                        let newLeaf = Leaf(name: name, date: date, low: low, user: user)
+//                        modelContext.insert(newLeaf)
                         dismiss()
                     }
                 }

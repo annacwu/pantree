@@ -29,8 +29,8 @@ struct AddBranchView: View {
                 
                 Section {
                     Button("Save") {
-                        let newBranch = Branch(name: name, type: type, food: food)
-                        modelContext.insert(newBranch)
+//                        let newBranch = Branch(name: name, type: type, food: food)
+//                        modelContext.insert(newBranch)
                         dismiss()
                         }
                     }
