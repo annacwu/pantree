@@ -48,6 +48,8 @@
 		92CBD92C2B5E2C0900EB1D9D /* Leaf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CBD92B2B5E2C0900EB1D9D /* Leaf.swift */; };
 		92CBD9302B5E2CEF00EB1D9D /* AddLeafView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CBD92F2B5E2CEF00EB1D9D /* AddLeafView.swift */; };
 		92D0E85B2B6C6D5E00EA3CC6 /* RegisterViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D0E85A2B6C6D5E00EA3CC6 /* RegisterViewViewModel.swift */; };
+		92D0E85D2B6C6FFF00EA3CC6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D0E85C2B6C6FFF00EA3CC6 /* Extensions.swift */; };
+		92D0E85F2B6C712900EA3CC6 /* MainViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D0E85E2B6C712900EA3CC6 /* MainViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,8 @@
 		92CBD92B2B5E2C0900EB1D9D /* Leaf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leaf.swift; sourceTree = "<group>"; };
 		92CBD92F2B5E2CEF00EB1D9D /* AddLeafView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLeafView.swift; sourceTree = "<group>"; };
 		92D0E85A2B6C6D5E00EA3CC6 /* RegisterViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewViewModel.swift; sourceTree = "<group>"; };
+		92D0E85C2B6C6FFF00EA3CC6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		92D0E85E2B6C712900EA3CC6 /* MainViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +173,7 @@
 			children = (
 				925CE7042B6AD4150074C8E7 /* LoginViewViewModel.swift */,
 				92D0E85A2B6C6D5E00EA3CC6 /* RegisterViewViewModel.swift */,
+				92D0E85E2B6C712900EA3CC6 /* MainViewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -179,6 +184,7 @@
 				9233C3F92B58FA2F003C1865 /* Assets.xcassets */,
 				9233C3F52B58FA2E003C1865 /* pantreeApp.swift */,
 				9266659C2B62F8D900DE4935 /* GoogleService-Info.plist */,
+				92D0E85C2B6C6FFF00EA3CC6 /* Extensions.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -293,7 +299,9 @@
 				92CBD92A2B5E26F800EB1D9D /* Branch.swift in Sources */,
 				92CBD9302B5E2CEF00EB1D9D /* AddLeafView.swift in Sources */,
 				925CE7052B6AD4150074C8E7 /* LoginViewViewModel.swift in Sources */,
+				92D0E85D2B6C6FFF00EA3CC6 /* Extensions.swift in Sources */,
 				926665642B61A32000DE4935 /* AddBranchView.swift in Sources */,
+				92D0E85F2B6C712900EA3CC6 /* MainViewViewModel.swift in Sources */,
 				926665A32B682EAF00DE4935 /* ProfileView.swift in Sources */,
 				926665A52B682ECD00DE4935 /* LoginView.swift in Sources */,
 				9233C3F62B58FA2E003C1865 /* pantreeApp.swift in Sources */,
