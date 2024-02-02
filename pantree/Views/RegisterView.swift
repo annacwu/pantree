@@ -51,7 +51,7 @@ struct RegisterView: View {
                     .padding()
                 
                 Button {
-                    // register
+                    viewModel.register()
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
