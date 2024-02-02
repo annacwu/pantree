@@ -38,6 +38,11 @@ struct LoginView: View {
             .padding(.bottom, 30)
             // Login Form
             VStack {
+                
+                if !viewModel.errorMessage.isEmpty {
+                    Text(viewModel.errorMessage).foregroundStyle(Color.red)
+                }
+                
                 TextField("Email Address", text: $viewModel.email)
                     .textFieldStyle(DefaultTextFieldStyle())
                     .textInputAutocapitalization(.none)
@@ -47,7 +52,7 @@ struct LoginView: View {
                     .padding()
                 
                 Button {
-                    //login
+                    viewModel.login()
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
