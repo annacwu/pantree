@@ -9,17 +9,23 @@ import SwiftUI
 import SwiftData
 
 struct MainView: View {
-    @Environment(\.modelContext) var modelContext
-    
-    @Query var branches: [Branch]
-    @Query var leaves: [Leaf]
-    
-    @State private var showingAddScreen = false
+    @StateObject var viewModel = MainViewViewModel()
     
     var body: some View {
-        NavigationView {
+        if viewModel.isSignedIn, !viewModel.currentUserId.isEmpty {
+            // signed in
+            
+        } else {
             LoginView()
         }
+//    @Environment(\.modelContext) var modelContext
+//    
+////    @Query var branches: [Branch]
+////    @Query var leaves: [Leaf]
+//    
+//    @State private var showingAddScreen = false
+    
+    
         
 //        NavigationStack{
 //            List {
