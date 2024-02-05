@@ -14,7 +14,17 @@ struct MainView: View {
     var body: some View {
         if viewModel.isSignedIn, !viewModel.currentUserId.isEmpty {
             // signed in
-            PantryView()
+            TabView {
+                PantryView()
+                    .tabItem {
+                        Label("home", systemImage: "house")
+                    }
+                
+                ProfileView()
+                    .tabItem {
+                        Label("profile", systemImage: "person.circle")
+                    }
+            }
         } else {
             LoginView()
         }
