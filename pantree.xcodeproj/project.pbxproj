@@ -17,6 +17,7 @@
 		926665A32B682EAF00DE4935 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926665A22B682EAF00DE4935 /* ProfileView.swift */; };
 		926665A52B682ECD00DE4935 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926665A42B682ECD00DE4935 /* LoginView.swift */; };
 		926665A72B682EDA00DE4935 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926665A62B682EDA00DE4935 /* RegisterView.swift */; };
+		92C4BB882B7171EF00B3F5F4 /* PantryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C4BB872B7171EF00B3F5F4 /* PantryView.swift */; };
 		92CBD92A2B5E26F800EB1D9D /* Branch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CBD9292B5E26F800EB1D9D /* Branch.swift */; };
 		92CBD92C2B5E2C0900EB1D9D /* Leaf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CBD92B2B5E2C0900EB1D9D /* Leaf.swift */; };
 		92CBD9302B5E2CEF00EB1D9D /* AddLeafView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CBD92F2B5E2CEF00EB1D9D /* AddLeafView.swift */; };
@@ -40,6 +41,7 @@
 		926665A22B682EAF00DE4935 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		926665A42B682ECD00DE4935 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		926665A62B682EDA00DE4935 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		92C4BB872B7171EF00B3F5F4 /* PantryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryView.swift; sourceTree = "<group>"; };
 		92CBD9292B5E26F800EB1D9D /* Branch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Branch.swift; sourceTree = "<group>"; };
 		92CBD92B2B5E2C0900EB1D9D /* Leaf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leaf.swift; sourceTree = "<group>"; };
 		92CBD92F2B5E2CEF00EB1D9D /* AddLeafView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLeafView.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				926665632B61A32000DE4935 /* AddBranchView.swift */,
+				92C4BB872B7171EF00B3F5F4 /* PantryView.swift */,
 				92CBD92F2B5E2CEF00EB1D9D /* AddLeafView.swift */,
 				9233C3F72B58FA2E003C1865 /* MainView.swift */,
 				926665A22B682EAF00DE4935 /* ProfileView.swift */,
@@ -228,6 +231,7 @@
 				92CBD9302B5E2CEF00EB1D9D /* AddLeafView.swift in Sources */,
 				925CE7052B6AD4150074C8E7 /* LoginViewViewModel.swift in Sources */,
 				92D0E85D2B6C6FFF00EA3CC6 /* Extensions.swift in Sources */,
+				92C4BB882B7171EF00B3F5F4 /* PantryView.swift in Sources */,
 				926665642B61A32000DE4935 /* AddBranchView.swift in Sources */,
 				92D0E85F2B6C712900EA3CC6 /* MainViewViewModel.swift in Sources */,
 				926665A32B682EAF00DE4935 /* ProfileView.swift in Sources */,
