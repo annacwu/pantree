@@ -15,7 +15,7 @@ struct MainView: View {
         if viewModel.isSignedIn, !viewModel.currentUserId.isEmpty {
             // signed in
             TabView {
-                PantryView()
+                PantryView(userId: viewModel.currentUserId)
                     .tabItem {
                         Label("home", systemImage: "house")
                     }
