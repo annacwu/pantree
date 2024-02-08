@@ -24,10 +24,13 @@ struct PantryView: View {
             .navigationTitle("your tree")
             .toolbar {
                 Button {
-                    // action
+                    viewModel.showingAddLeafView = true
                 } label : {
                     Image(systemName: "plus")
                 }
+            }
+            .sheet(isPresented: $viewModel.showingAddLeafView) {
+                AddLeafView(newItemAdded: $viewModel.showingAddLeafView)
             }
         }
     }

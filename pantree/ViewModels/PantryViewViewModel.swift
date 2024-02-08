@@ -8,5 +8,6 @@
 import Foundation
 
 class PantryViewViewModel: ObservableObject {
+    @Published var showingAddLeafView = false
     init() {}
 }

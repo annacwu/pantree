@@ -9,25 +9,44 @@ import SwiftUI
 
 struct AddLeafView: View {
     @StateObject var viewModel = AddLeafViewViewModel()
+    @Binding var newItemAdded: Bool
     
     var body: some View {
         VStack {
             Text("new item")
                 .font(.system(size: 32))
                 .bold()
+                .padding()
             
             Form {
                 TextField("item", text: $viewModel.title)
                 
                 DatePicker("date added", selection: $viewModel.dateAdded, displayedComponents: .date)
                     .datePickerStyle(GraphicalDatePickerStyle())
-//                Section {
-//                    Button("Save"){
-//                        viewModel.save()
-//                    }
-//                    .background(Color.pink)
-//                }
+                    .accentColor(.brown) // FIX THIS LATER
+                
+                Button(action: {
+                    if viewModel.canSave {
+                        viewModel.save()
+                        newItemAdded = false
+                    } else {
+                        viewModel.showAlert = true
+                    }
+                }, label: {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 10)
+                            .foregroundStyle(Color.brown)
+                        
+                        Text("Save")
+                            .foregroundStyle(Color.white)
+                            .bold()
+                    }
+                })
+                .padding()
             }
+            .alert(isPresented: $viewModel.showAlert, content: {
+                Alert(title: Text("Error"), message: Text("Please fill in all fields and select a date today or earlier."))
+            })
         }
     }
 }
@@ -77,5 +96,9 @@ struct AddLeafView: View {
 //    }
 
 #Preview {
-    AddLeafView()
+    AddLeafView(newItemAdded: Binding(get: {
+        return true
+    }, set: { _ in
+        
+    }))
 }
