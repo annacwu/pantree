@@ -8,51 +8,73 @@
 import SwiftUI
 
 struct AddLeafView: View {
-    @Environment(\.modelContext) var modelContext
-    @Environment(\.dismiss) var dismiss
-    
-    let users = ["anna", "gabby", "jmo", "lyell"]
-    @State private var name = ""
-    @State private var date = ""
-    @State private var low = "yes"
-    // fix this later
-    @State private var user = "anna"
-    
+    @StateObject var viewModel = AddLeafViewViewModel()
     
     var body: some View {
-        NavigationStack {
+        VStack {
+            Text("new item")
+                .font(.system(size: 32))
+                .bold()
+            
             Form {
-                Section {
-                    TextField("name of item", text: $name)
-                    TextField("date of purchase", text: $date)
-                    Picker("running low?", selection: $low){
-                        Text("yes")
-                        Text("no")
-                    }
-                    Picker("owner?", selection: $user){
-                        ForEach(users.indices) { index in
-                            Text(users[index])
-                        }
-                    }
-                }
+                TextField("item", text: $viewModel.title)
                 
-                Section {
-                    Button("Save") {
-//                        let newLeaf = Leaf(name: name, date: date, low: low, user: user)
-//                        modelContext.insert(newLeaf)
-                        dismiss()
-                    }
-                }
-            }
-            .navigationTitle("add leaf")
-            .toolbar{
-                Button("Close"){
-                    dismiss()
-                }
+                DatePicker("date added", selection: $viewModel.dateAdded, displayedComponents: .date)
+                    .datePickerStyle(GraphicalDatePickerStyle())
+//                Section {
+//                    Button("Save"){
+//                        viewModel.save()
+//                    }
+//                    .background(Color.pink)
+//                }
             }
         }
     }
 }
+//    @Environment(\.modelContext) var modelContext
+//    @Environment(\.dismiss) var dismiss
+//    
+//    let users = ["anna", "gabby", "jmo", "lyell"]
+//    @State private var name = ""
+//    @State private var date = ""
+//    @State private var low = "yes"
+//    // fix this later
+//    @State private var user = "anna"
+//    
+//    
+//    var body: some View {
+//        NavigationStack {
+//            Form {
+//                Section {
+//                    TextField("name of item", text: $name)
+//                    TextField("date of purchase", text: $date)
+//                    Picker("running low?", selection: $low){
+//                        Text("yes")
+//                        Text("no")
+//                    }
+//                    Picker("owner?", selection: $user){
+//                        ForEach(users.indices) { index in
+//                            Text(users[index])
+//                        }
+//                    }
+//                }
+//                
+//                Section {
+//                    Button("Save") {
+////                        let newLeaf = Leaf(name: name, date: date, low: low, user: user)
+////                        modelContext.insert(newLeaf)
+//                        dismiss()
+//                    }
+//                }
+//            }
+//            .navigationTitle("add leaf")
+//            .toolbar{
+//                Button("Close"){
+//                    dismiss()
+//                }
+//            }
+//        }
+//    }
 
 #Preview {
     AddLeafView()
