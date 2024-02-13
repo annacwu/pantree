@@ -8,12 +8,15 @@ import FirebaseFirestoreSwift
 import SwiftUI
 
 struct PantryView: View {
-    @StateObject var viewModel = PantryViewViewModel()
+    @StateObject var viewModel: PantryViewViewModel
     @FirestoreQuery var items: [LeafItem]
     
     init(userId: String) {
         self._items = FirestoreQuery(
             collectionPath: "users/\(userId)/pantry"
+        )
+        self._viewModel = StateObject(
+            wrappedValue: PantryViewViewModel(userId: userId) // make view model through this initializer insatead
         )
     }
     
@@ -22,6 +25,13 @@ struct PantryView: View {
             VStack {
                 List(items) { item in
                     Text(item.title)
+                        .swipeActions {
+                            Button(role: .destructive) {
+                                viewModel.delete(id: item.id)
+                            } label: {
+                                Text("Delete")
+                            }
+                        }
                 }
                 .listStyle(PlainListStyle())
             }
