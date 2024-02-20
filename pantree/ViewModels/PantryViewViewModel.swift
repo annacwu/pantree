@@ -22,7 +22,7 @@ class PantryViewViewModel: ObservableObject {
         let db = Firestore.firestore()
         
         db.collection("users")
-            .document("user_id")
+            .document(userId)
             .collection("pantry")
             .document(id)
             .delete()
