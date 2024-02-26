@@ -13,46 +13,50 @@ struct ProfileView: View {
     var body: some View {
         NavigationView {
             VStack {
-                // Avatar
-                Image(systemName: "person.circle")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                    .frame(width: 125, height: 125)
-                    .padding()
-                
-                // Info: Name, Email, Member since
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text("Name: ")
-                            .bold()
-                        Text("name")
+                if let user = viewModel.user {
+                    // Avatar
+                    Image(systemName: "person.circle")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                        .frame(width: 125, height: 125)
+                        .padding()
+                    
+                    // Info: Name, Email, Member since
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Text("Name: ")
+                                .bold()
+                            Text(user.name)
+                        }
+                        HStack {
+                            Text("Email: ")
+                                .bold()
+                            Text(user.email)
+                        }
+                        HStack {
+                            Text("Member since: ")
+                                .bold()
+                            Text("\(Date(timeIntervalSince1970: user.joined).formatted(date: .abbreviated, time: .shortened))")
+                        }
                     }
                     .padding()
-                    HStack {
-                        Text("Email: ")
-                            .bold()
-                        Text("name")
+                    
+                    // Sign out
+                    Button {
+                        viewModel.logOut()
+                    } label: {
+                        Text("Log Out")
                     }
                     .padding()
-                    HStack {
-                        Text("Member since: ")
-                            .bold()
-                        Text("name")
-                    }
-                    .padding()
+                } else {
+                    Text("Loading Profile...")
                 }
-                .padding()
-                
-                // Sign out
-                Button {
-                    viewModel.logOut()
-                } label: {
-                    Text("Log Out")
-                }
-                .padding()
             }
             .navigationTitle("profile")
+        }
+        .onAppear {
+            viewModel.fetchUser()
         }
     }
 }
